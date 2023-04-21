@@ -9,6 +9,7 @@ import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingListUpdateComponent } from './booking-list-update/booking-list-update.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { DriverListComponent } from './drivers/driver-list/driver-list.component';
+import { DriverFormComponent } from './drivers/driver-form/driver-form.component';
 
 const routes: Routes = [
   {
@@ -37,10 +38,16 @@ const routes: Routes = [
   },
   {
     path : 'books/:id/view', component : BookingDetailComponent
+  },
+  {
+    path : 'drivers', component : DriverListComponent
+  },
+  {
+    path : 'drivers/add', component : DriverFormComponent
+  },
+  {
+    path : 'drivers/update/:id', component : DriverFormComponent
   }
-  // {
-  //   path : 'driver-list', component : DriverListComponent
-  // }
 ];
 
 @NgModule({
