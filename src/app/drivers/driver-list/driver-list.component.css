@@ -1,0 +1,46 @@
+section{
+    font-size: 16px;
+}
+.table-rounded {
+    border: none;
+}
+.table-rounded thead th {
+    background-color: #282828;
+    border: none;
+    text-shadow: 1px 1px 1px #ccc;
+    color: #ffffff;
+}
+.table-rounded thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.table-rounded thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+.table-rounded tbody td {
+    border: none;
+    border-top: solid 1px #282828;
+    background-color: #ffffff;
+}
+.table-rounded tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.table-rounded tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+.pointer {
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place front is invalid - may break your css so removed */  
+    padding-top: 100px; /* Location of the box - don't know what this does?  If it is to move your modal down by 100px, then just change top below to 100px and remove this*/
+    left: 0;
+    right:0; /* Full width (left and right 0) */
+    top: 0;
+    bottom: 0; /* Full height top and bottom 0 */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 9999; /* Sit on top - higher than any other z-index in your site*/
+}

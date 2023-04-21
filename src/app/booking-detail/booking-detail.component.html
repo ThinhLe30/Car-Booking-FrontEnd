@@ -1,0 +1,21 @@
+<section>
+    <h1 class="mt-4">{{title}}</h1>
+    <form>
+        <label for="firstName">Họ:</label>
+        <input type="text" placeholder="Họ"  id="firstName" value="{{book.firstName}}" readonly readonly/>
+        <label for="lastName">Tên:</label>
+        <input type="text" placeholder="Tên"  id = "lastName" value="{{book.lastName}}"  readonly/>
+        <label for="pickDestination">Địa điểm đón:</label>
+        <input type="text" placeholder="Địa điểm đón"  id = "pickDestination" value="{{book.pickDestination}}"  readonly/>
+        <label for="dropDestination">Địa điểm trả:</label>
+        <input type="text" placeholder="Địa điểm trả"  id = "dropDestination" value="{{book.dropDestination}}"  readonly/>
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" placeholder="Số điện thoại"  id="phone" value="{{book.phone}}"  readonly/>
+        <label for="date_booking">Ngày đón:</label>
+        <input type="date" placeholder="Ngày đón" id="date_booking" value="{{formatDate(book.dateBooking)}}"   readonly/>
+        <label for="note">Ghi chú:</label>
+        <textarea name="" id="note" cols="30" rows="10" value="{{book.note}}"  readonly></textarea>
+        <label for="seat">Ghế ngồi:</label>
+        <input type="text" placeholder="Ghế ngồi"  id = "seat" value="{{book.sheet}}"  readonly/>
+    </form>
+</section>

@@ -1,0 +1,28 @@
+/* footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+} */
+.footer_section {
+  background-color: #f7c621;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footer_section p {
+  color: #000000;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+  width: 55%;
+}
+
+.footer_section a {
+  color: #000000;
+}
+

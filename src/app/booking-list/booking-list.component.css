@@ -1,0 +1,136 @@
+section{
+    font-size: 16px;
+}
+.table-rounded {
+    border: none;
+}
+.table-rounded thead th {
+    background-color: #282828;
+    border: none;
+    text-shadow: 1px 1px 1px #ccc;
+    color: #ffffff;
+}
+.table-rounded thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.table-rounded thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+.table-rounded tbody td {
+    border: none;
+    border-top: solid 1px #282828;
+    background-color: #ffffff;
+}
+.table-rounded tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.table-rounded tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+.pointer {
+    cursor: pointer;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place front is invalid - may break your css so removed */  
+    padding-top: 100px; /* Location of the box - don't know what this does?  If it is to move your modal down by 100px, then just change top below to 100px and remove this*/
+    left: 0;
+    right:0; /* Full width (left and right 0) */
+    top: 0;
+    bottom: 0; /* Full height top and bottom 0 */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 9999; /* Sit on top - higher than any other z-index in your site*/
+}
+
+
+
+
+
+.pagination-outer{ text-align: center; }
+.pagination{
+    display: inline-flex;
+    position: relative;
+}
+.pagination li a.page-link{
+    color: #282828;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 30px;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin: 0 6px;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease 0.1s;
+}
+.pagination li a.page-link:hover,
+.pagination li a.page-link:focus,
+.pagination li.active a.page-link:hover,
+.pagination li.active a.page-link{
+    color: #fff;
+    background: #333;
+    box-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+.pagination li a.page-link:before,
+.pagination li a.page-link:after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    border: 2px solid #282828;
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.5s ease 0s;
+}
+.pagination li a.page-link:after{
+    background-color: #fff;
+    border: none;
+    height: 4px;
+    width: 50%;
+    border-radius: 10px;
+    opacity: 0;
+    top: auto;
+    bottom: 3px;
+    left: -50%;
+}
+.pagination li a.page-link:hover:before,
+.pagination li a.page-link:focus:before,
+.pagination li.active a.page-link:hover:before,
+.pagination li.active a.page-link:before{
+    opacity: 0;
+    left: 7px;
+}
+.pagination li a.page-link:hover:after,
+.pagination li a.page-link:focus:after,
+.pagination li.active a.page-link:hover:after,
+.pagination li.active a.page-link:after{
+    opacity: 1;
+    left: 3px;
+}
+@media only screen and (max-width: 480px){
+    .pagination{
+        font-size: 0;
+        display: inline-block;
+    }
+    .pagination li{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 22px;
+    }
+}
+
+.demo {
+    position: relative;
+
+  }
+  

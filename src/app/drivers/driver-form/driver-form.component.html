@@ -1,0 +1,13 @@
+<section>
+    <form [formGroup] = "form">
+        <label for="firstName">Họ:</label>
+        <input type="text"  placeholder = "Họ" formControlName = "firstName" id="firstName"/>
+        <label for="lastName">Tên:</label>
+        <input type="text" placeholder="Tên" formControlName = "lastName" id = "lastName"/>
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" placeholder="Số điện thoại" formControlName = "phone" id="phone"/>
+        <label for="date_booking">Ngày đón:</label>
+        <input type="date" placeholder="Sinh nhật" formControlName = "birth_date" id="date_booking"/>
+        <button style="color: black" type="submit" class="btn">Xác nhận</button>
+    </form>
+</section>

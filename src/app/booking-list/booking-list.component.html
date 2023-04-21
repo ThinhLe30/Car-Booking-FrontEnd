@@ -1,0 +1,103 @@
+<section>
+  <div class="pt-5 pl-4 pr-4 justify-content-center h-100">
+    <h1 class="text-center mb-4">Quản Lý Đơn Đặt Xe</h1>
+    <div class="mb-2">
+      <span class="mr-2 mb-4 mt-4">Hiển Thị</span>
+      <select name="" #selectList (change)="handlePageSize(selectList.value)">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+      <span class="ml-2 mr-2 mb-4 mt-4">Mẫu</span>
+    </div>
+    <table class="table table-hover table-rounded mb-5 table-res">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 14%;"><a (click)="handleSorting('lastName',reverseOrderBy)">Họ Và Tên</a></th>
+          <th scope="col" style="width: 15%;"><a (click)="handleSorting('dropDestination',reverseOrderBy)">Địa Điểm Trả</a></th>
+          <th scope="col" style="width: 15%;"><a (click)="handleSorting('pickDestination',reverseOrderBy)">Địa Điểm Đón</a></th>
+          <th scope="col" style="width: 10%;"><a (click)="handleSorting('phone',reverseOrderBy)">Số Điện Thoại</a></th>
+          <th scope="col" style="width: 30%;"><a (click)="handleSorting('note',reverseOrderBy)">Ghi Chú</a></th>
+          <th scope="col" style="width: 10%;"><a (click)="handleSorting('dateBooking',reverseOrderBy)">Ngày Đón</a></th>
+          <th scope="col" style="width: 6%;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of bookingList">
+          <td>{{ book.firstName }} {{ book.lastName }}</td>
+          <td>{{ book.dropDestination }}</td>
+          <td>{{ book.pickDestination }}</td>
+          <td>{{ book.phone }}</td>
+          <td>{{ book.note }}</td>
+          <td>{{ book.dateBooking | date : "dd/MM/yyyy" }}</td>
+          <td>
+            <a
+              *ngIf="book.status == true"
+              (click)="confirmBookDetails(book.id)"
+              class="text-decoration-none pointer"
+              title="Click to confirm this booking detail"
+              ><i class="fas fa-check-circle" style="color: lightgreen"></i
+            ></a>
+            <a
+              *ngIf="book.status == false"
+              (click)="confirmBookDetails(book.id)"
+              class="text-decoration-none pointer"
+              title="Click to confirm this booking detail"
+              ><i class="fas fa-check-circle" style="color: gray"></i
+            ></a>
+            <a
+              (click)="viewDetail(book.id)"
+              class="text-decoration-none pointer ml-2"
+              title="Click to view detail this booking"
+              ><i class="fa fa-file" style="color: #ffd23f;" aria-hidden="true"></i
+            ></a>
+            <a
+              (click)="showModalConfirm(book.id)"
+              class="text-decoration-none pointer ml-2"
+              title="Click to view delete this booking"
+              ><i class="fa fa-trash" style="color: lightcoral;" aria-hidden="true"></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="demo pb-4">
+      <nav class="pagination-outer" aria-label="Page navigation">
+          <ul class="pagination">
+              <li class="page-item" [ngClass]="{'disabled': pageNo === 0}">
+                  <a (click)="hanldePaging(pageNo-1)" 
+                        class="page-link" aria-label="Previous">
+                      <span aria-hidden="true">«</span>
+                  </a>
+              </li>
+              <div  *ngFor="let item of [].constructor(totalPages); let i = index">
+                <li class="page-item" [ngClass]="{'active': i === pageNo}">
+                  <a class="page-link" (click)="hanldePaging(i)">{{i+1}}</a>
+                </li>
+              </div>
+              <li class="page-item" [ngClass]="{'disabled': pageNo === totalPages-1}">
+                  <a (click)="hanldePaging(pageNo+1)" 
+                        class="page-link" aria-label="Next">
+                      <span aria-hidden="true">»</span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+  </div>
+  </div>
+  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Bạn có muốn xóa đơn đặt chỗ ID: {{id}}?</h5>
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger link-delete" (click) = "deleteBookDetail()">Xóa</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
