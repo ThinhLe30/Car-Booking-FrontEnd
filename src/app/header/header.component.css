@@ -1,0 +1,116 @@
+/* header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+} */
+.heading_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 45px;
+  }
+  
+  .heading_container h2 {
+    position: relative;
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  .heading_container h2::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    top: 50%;
+    right: -45px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 1;
+    background-color: #dbc64c;
+    background-repeat: no-repeat;
+  }
+  
+ 
+  
+  .header_section .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  
+  .header_section .nav_container {
+    margin: 0 auto;
+  }
+  
+  .custom_nav-container .navbar-nav .nav-item .nav-link {
+    margin: 10px 20px;
+    padding: 0;
+    color: #282828;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  a,
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+  
+  a:hover,
+  a:focus {
+    color: initial;
+  }
+  
+  .btn,
+  .btn:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  
+  .custom_nav-container .nav_search-btn {
+    background-image: url(/assets/images/search-icon.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: none;
+  }
+  
+  .navbar-brand {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .navbar-brand span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b0b0a;
+    text-transform: uppercase;
+  }
+  
+  .custom_nav-container {
+    z-index: 99999;
+    padding-top: 20px;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  
+  .navbar-expand-lg .navbar-collapse {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  
+  .custom_nav-container .navbar-toggler {
+    outline: none;
+  }
+  
+  .custom_nav-container .navbar-toggler .navbar-toggler-icon {
+    background-image: url(/assets/images/menu.png);
+    background-size: 45px;
+  }

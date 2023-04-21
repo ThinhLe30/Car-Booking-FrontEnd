@@ -1,0 +1,37 @@
+<section>
+    <h1 class="mt-4">{{title}}</h1>
+    <form (ngSubmit) = "onSubmit()" [formGroup] = "form">
+        <label for="firstName">Họ:</label>
+        <input type="text" placeholder="Họ" formControlName = "firstName" id="firstName"/>
+        <label for="lastName">Tên:</label>
+        <input type="text" placeholder="Tên" formControlName = "lastName" id = "lastName"/>
+        <label for="pickDestination">Địa điểm đón:</label>
+        <input type="text" placeholder="Địa điểm đón" formControlName = "pickDestination" id = "pickDestination"/>
+        <label for="dropDestination">Địa điểm trả:</label>
+        <input type="text" placeholder="Địa điểm trả" formControlName = "dropDestination" id = "dropDestination"/>
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" placeholder="Số điện thoại" formControlName = "phone" id="phone"/>
+        <label for="date_booking">Ngày đón:</label>
+        <input type="date" placeholder="Ngày đón" formControlName = "date_booking" min="{{dateToday() | date:'yyyy-MM-dd'}}" 
+              max="{{dateTodayPlus2Weeks() | date:'yyyy-MM-dd'}}" id="date_booking"/>
+        <label for="note">Ghi chú:</label>
+        <textarea name="" id="note" cols="30" rows="10" formControlName = "note" ></textarea>
+        <label for="seat">Ghế ngồi:</label>
+        <select formControlName = "seat" id="seat"> 
+          <option value="FRONT">Ghế đầu</option>
+          <option value="MIDDLE_MIDDLE">Ghế giữa</option>
+          <option value="MIDDLE_RIGHT">Ghế giữa bên phải</option>
+          <option value="MIDDLE_LEFT">Ghế giữa bên trái</option>
+          <option value="BACK_MIDDLE">Ghế sau</option>
+          <option value="BACK_RIGHT">Ghế sau bên phải</option>
+          <option value="BACK_LEFT">Ghế sau bên trái</option>
+        </select>
+        <label for="seat">Chuyến:</label>
+        <select formControlName = "tripId" id="trip"> 
+          <option 
+                  *ngFor="let trip of tripList"
+                  value="{{trip.id}}">{{ trip.startTime | date : "dd/MM/yyyy, HH:mm a" }} -> {{ trip.endTime | date : "dd/MM/yyyy, HH:mm a" }}</option>
+        </select>
+        <button style="color: black" type="submit" onclick="" [disabled] = "form.invalid" class="btn">Xác nhận</button>
+    </form>
+</section>

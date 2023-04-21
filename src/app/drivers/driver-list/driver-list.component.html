@@ -1,0 +1,90 @@
+<section>
+  <div class="pt-5 pl-4 pr-4 justify-content-center">
+    <h1 class="text-center mb-4">Quản lý tài xế</h1>
+    <table class="table table-hover table-rounded mb-5">
+      <thead>
+        <tr>
+          <th scope="col">Họ</th>
+          <th scope="col">Tên</th>
+          <th scope="col">Ngày Sinh</th>
+          <th scope="col">Số Điện Thoại</th>
+          <th scope="col" style="width: 6%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let driver of driverList">
+          <td>{{ driver.firstName }}</td>
+          <td>{{ driver.lastName }}</td>
+          <td>{{ driver.phone }}</td>
+          <td>{{ driver.birth_date | date : "dd/MM/yyyy" }}</td>
+          <td>
+            <a
+              class="text-decoration-none pointer ml-2"
+              (click)="showUpdate(driver)"
+              title="Click to UPDATE this driver"
+              ><i
+                class="fa fa-file"
+                style="color: #ffd23f"
+                aria-hidden="true"
+              ></i
+            ></a>
+            <a
+              class="text-decoration-none pointer ml-2"
+              (click)="showDelete(driver.id)"
+              title="Click to DELETE this driver"
+              ><i
+                class="fa fa-trash"
+                style="color: lightcoral"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    class="modal fade"
+    id="modelId"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="modelTitleId"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bạn có muốn xóa tài xế ID:? {{ id }}</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger link-delete">Xóa</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Hủy
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade bd-example-modal-lg"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myLargeModalLabel"
+    aria-hidden="true"
+    id="editModal"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #ffd23f;">
+          <h5 class="modal-title font-weight-bold text-center">CẬP NHẬT THÔNG TIN TÀI XẾ ID: {{ id }}</h5>
+        </div>
+        <div class="modal-body">
+            <app-driver-form></app-driver-form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+          </div>
+      </div>
+    </div>
+</div>
+</section>
