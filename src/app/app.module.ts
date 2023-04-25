@@ -21,6 +21,7 @@ import { BookingListUpdateComponent } from './booking-list-update/booking-list-u
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { DriverListComponent } from './drivers/driver-list/driver-list.component';
 import { DriverFormComponent } from './drivers/driver-form/driver-form.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { DriverFormComponent } from './drivers/driver-form/driver-form.component
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

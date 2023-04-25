@@ -11,6 +11,6 @@
         <input type="text" placeholder="Email" formControlName = "email" id = "email"/>
         <label for="address">Địa Chỉ:</label>
         <input type="text" placeholder="Địa Chỉ" formControlName = "address" id = "address"/>
-        <button style="color: black" type="submit" onclick="" [disabled] = "form.invalid" class="btn">Xác nhận</button>
+        <button style="color: black" type="submit" onclick="" [disabled] = "form.invalid" class="btn" (click)="handleSubmit()">Xác nhận</button>
     </form>
 </section>
