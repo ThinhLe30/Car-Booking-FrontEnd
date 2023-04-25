@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Driver } from '../models/driver';
 import { Observable } from 'rxjs';
+import { Book } from '../models/book';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,11 @@ export class DriverService {
   getDriverById(id : number){
     return this.httpClient.get<Driver>(`${this.baseUrl}/${id}`);
   }
-  updateDriver(id: number, book : Driver) : Observable<Object>{
-    return this.httpClient.put(`${this.baseUrl}/${id}`, book);
+  updateDriver(id: number, driver : Driver) : Observable<Object>{
+    return this.httpClient.put(`${this.baseUrl}/${id}`, driver);
+  }
+  addDriver(driver : Driver): Observable<Object>{
+    return this.httpClient.post(`${this.baseUrl}`, driver);
   }
   deleteDriver(id : number){
     return this.httpClient.delete(`${this.baseUrl}/${id}`);

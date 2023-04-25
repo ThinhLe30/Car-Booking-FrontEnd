@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { Driver } from 'src/app/models/driver';
 import { DriverService } from 'src/app/services/driver.service';
 declare var $: any
@@ -19,7 +21,7 @@ export class DriverListComponent implements OnInit{
   reverseOrderBy : string = "desc";
   totalElements : number;
   totalPages : number;
-  constructor(private driverSerice : DriverService, private router :Router){}
+  constructor(private driverSerice : DriverService, private router :Router, private toastService: NgToastService){}
   ngOnInit(): void {
     this.getDriverList()
   }
@@ -54,7 +56,7 @@ export class DriverListComponent implements OnInit{
   }
   showUpdate(driver : Driver){
     this.id = driver.id  
-    alert("deletinggg");
+    this.router.navigate(['/drivers/update',this.id]);
   }
   showDelete(id : number){
     this.id = id
@@ -64,12 +66,19 @@ export class DriverListComponent implements OnInit{
   }
   handleDelete(id : number){
     this.driverSerice.deleteDriver(id).subscribe(data => {
-      console.log(data);
+      this.toastService.success({detail: "XÓA TÀI XẾ", summary:"Xóa tài xế ID: " + id + " thành công!.", duration:5000});
       this.getDriverList();
       $("#modelId").modal('toggle');
-    }); 
+    }, error => {
+      if (error instanceof HttpErrorResponse) {
+        this.toastService.error({detail: "OOPS. LỖI", summary:error.error.message, duration:5000});
+      }
+      else{
+        this.toastService.error({detail: "OOPS. LỖI", summary:"An error occurred while fetching the driver:", duration:5000});
+      }
+    });
   }
   handleAdd(){
-    alert("addingggg");
+    this.router.navigate(['/drivers/add']);
   }
 }
