@@ -51,7 +51,7 @@
     margin-right: 10px;
   }
   
-.slider_form form .btm_input button {
+.slider_form form .btm_input a {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -64,4 +64,15 @@
 .slider_form form input .ng-invalid .ng-touched,
 .slider_form form textarea .ng-invalid .ng-touched{
   border: 1px solid red !important;
+}
+
+.social-icon {
+  font-size: 24px;
+  margin-left: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: blue; /* Màu sẽ thay đổi khi di chuột qua */
 }

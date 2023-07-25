@@ -13,15 +13,9 @@ import { ContactComponent } from './contact/contact.component';
 import { WhyComponent } from './why/why.component';
 import { MainComponent } from './main/main.component';
 import {HttpClientModule} from '@angular/common/http';
-import { BookingComponent } from './booking/booking.component';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
-import { ProcessingBookingComponent } from './processing-booking/processing-booking.component';
-import { BookingListComponent } from './booking-list/booking-list.component';
-import { BookingListUpdateComponent } from './booking-list-update/booking-list-update.component';
-import { BookingDetailComponent } from './booking-detail/booking-detail.component';
-import { DriverListComponent } from './drivers/driver-list/driver-list.component';
-import { DriverFormComponent } from './drivers/driver-form/driver-form.component';
 import { NgToastModule } from 'ng-angular-popup';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +29,7 @@ import { NgToastModule } from 'ng-angular-popup';
     ContactComponent,
     WhyComponent,
     MainComponent,
-    BookingComponent,
-    ProcessingBookingComponent,
-    BookingListComponent,
-    BookingListUpdateComponent,
-    BookingDetailComponent,
-    DriverListComponent,
-    DriverFormComponent
+    BookingComponent
   ],
   imports: [
     BrowserModule,

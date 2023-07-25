@@ -81,7 +81,7 @@ body {
       right: -45px;
       transform: translateY(-50%);
       z-index: 1;
-      background-color: #dbc64c;
+      // background-color: #dbc64c;
       background-repeat: no-repeat;
     }
   }
@@ -91,7 +91,7 @@ body {
 .hero_area {
   min-height: 100vh;
   position: relative;
-  background-image: url(../images/hero-bg.jpg);
+  // background-image: url(../images/hero-bg.jpg);
   background-size: cover;
 
   &::before {
