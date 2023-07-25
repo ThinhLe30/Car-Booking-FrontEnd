@@ -1,29 +1,13 @@
 <div class="slider_form">
     <h4>Đặt chỗ ngay hôm nay</h4>
-    <form (ngSubmit) = "onSubmit()" [formGroup] = "form">
-      <input type="text" placeholder="Họ" formControlName = "firstName"/>
-      <input type="text" placeholder="Tên" formControlName = "lastName"/>
-      <input type="text" placeholder="Địa điểm đón" formControlName = "pickDestination"/>
-      <input type="text" placeholder="Địa điểm trả" formControlName = "dropDestination"/>
-      <input type="date" placeholder="Ngày đón" formControlName = "date_booking" min="{{dateToday() | date:'yyyy-MM-dd'}}" 
-            max="{{dateTodayPlus2Weeks() | date:'yyyy-MM-dd'}}"/>
-      <select name="" id="seat_dropdown" formControlName = "seat">
-        <option value="FRONT">Ghế đầu</option>
-        <option value="MIDDLE_MIDDLE">Ghế giữa</option>
-        <option value="MIDDLE_RIGHT">Ghế giữa bên phải</option>
-        <option value="MIDDLE_LEFT">Ghế giữa bên trái</option>
-        <option value="BACK_MIDDLE">Ghế sau</option>
-        <option value="BACK_RIGHT">Ghế sau bên phải</option>
-        <option value="BACK_LEFT">Ghế sau bên trái</option>
-      </select>
-      <div class="btm_input">
-        <input type="tel" placeholder="Số điện thoại" formControlName = "phone"/>
-        <button style="color: black" type="submit" onclick="" [disabled] = "form.invalid" class="btn">Đặt chỗ</button>
-      </div>
+    <form>
+        <div class="btm_input">
+            <a style="color: black;font-size: larger;" type="submit" class="btn" href="tel:0706675355">
+                <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<span style="font-size: large;">0886 075 075</span>
+            </a>
+        </div>
     </form>
     <h6>
-      *Tài xế sẽ liên lạc trước với bạn 30 phút để tiến hành trao đổi và
-      xác nhận thời gian đưa đón.
+        *Tài xế sẽ liên lạc trước với bạn 30 phút để tiến hành trao đổi và xác nhận thời gian đưa đón.
     </h6>
-  </div>
-
+</div>
